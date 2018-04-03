@@ -91,7 +91,7 @@ public class MorseService {
 	public List<Morse> encodeStringToMorse(String string) {
 		List<Morse> morses = new ArrayList<Morse>();
 
-		for (char character : string.toCharArray()) {
+		for (char character : string.replace(" ", "").toCharArray()) {
 			Morse morse = getMorseForCharacter(Character.toString(character).toUpperCase());
 			morses.add(morse);
 		}
